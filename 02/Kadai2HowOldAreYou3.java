@@ -3,18 +3,21 @@ import java.util.Date;
 
 public class Kadai2HowOldAreYou3{
 
+		// 定数の定義
+		public static final Date Dt = new Date();
+		public static final int HOLDINGYEAR = 2025;
+    public static final BufferedReader IN = new BufferedReader(new InputStreamReader(System.in));
+    public static final int YEAR = Dt.getYear() + 1900;
+
 	public static void main(String[] args) {
 
-    // ターミナルから年齢を入力する/
-    BufferedReader IN = new BufferedReader(new InputStreamReader(System.in));
-		Date Dt = new Date();
-    int YEAR = Dt.getYear() + 1900;
-		int HOLDINGYEAR = 2025;
+		// 変数の定義
 		int age = 0;
-    
+
 		try {
 			System.out.println("How old are you ?");
       while(true){
+    		// ターミナルから年齢を入力する/
 				String input = IN.readLine();
 
     		// qまたは0の場合は、終了する
@@ -45,24 +48,23 @@ public class Kadai2HowOldAreYou3{
 
 		if(birthdayYear >= 2019){
 			int jpYer = birthdayYear - 2018;
-			if(jpYer == 1) { System.out.println("the 1st year of Reiwa"); }
-			System.out.println("Reiwa " + jpYer + "th");
+			if(jpYer == 1) { 
+				System.out.println("the 1st year of Reiwa");
+			}else{
+				System.out.println("Reiwa " + jpYer + "th");
+			}
 		}else if(birthdayYear >= 1989){
 			int jpYer = birthdayYear - 1988;
-			if(jpYer == 1) { System.out.println("the 1st year of Heisei"); }
-			System.out.println("Heisei " + jpYer + "th");
+			System.out.println(jpYer == 1 ? "the 1st year of Heisei" : "Heisei " + jpYer + "th" );
 		}else if(birthdayYear >= 1926){
 			int jpYer = birthdayYear - 1925;
-			if(jpYer == 1) { System.out.println("the 1st year of Showa"); }
-			System.out.println("Showa " + jpYer + "th");
+			System.out.println(jpYer == 1 ? "the 1st year of Showa" : "Showa " + jpYer + "th" );
 		}else if(birthdayYear >= 1912){
 			int jpYer = birthdayYear - 1911;
-			if(jpYer == 1) { System.out.println("the 1st year of Taisho"); }
-			System.out.println("Taisho " + jpYer + "th");
+			System.out.println(jpYer == 1 ?  "the 1st year of Taisho" : "Taisho " + jpYer + "th" );
 		}else{
 			int jpYer = birthdayYear - 1868;
-			if(jpYer == 1) { System.out.println("the 1st year of Heisei"); }
-			System.out.println("Meiji " + jpYer + "th");
+			System.out.println(jpYer == 1 ?  "the 1st year of Meiji" : "Meiji " + jpYer + "th" );
 		}
 
 		System.out.println("Good bye!");
